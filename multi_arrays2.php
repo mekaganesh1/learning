@@ -1,0 +1,97 @@
+<?php
+error_reporting(0);
+$result = array();
+
+/*$Arr1 = array(1=>array('x'=>1),
+			2=>array('x'=>2),
+			4=>array('x'=>3),
+);
+$Arr2 = array(1=>array('y'=>1),
+			2=>array('y'=>2),
+			3=>array('y'=>2),
+			4=>array('y'=>2),
+			5=>array('y'=>3),
+			6=>array('y'=>4),
+			7=>array('y'=>3),
+			8=>array('y'=>6),
+			9=>array('y'=>7),
+			10=>array('y'=>8),
+);*/
+
+
+ /*$Arr1 = Array
+        (
+            [0] => Array
+  				(
+  					[0] => 'elephant'
+  				)
+
+            [1] => Array
+                (
+                    [0] => 'module'
+                )
+
+            [2] => Array
+                (
+                    [0] => 'branch';
+                )
+
+            [3] => Array
+                (
+                    [0] => 'religion';
+                )
+
+            [4] => Array
+                (
+                    [0] => 'charge';
+                )
+
+        );*/
+
+
+//$Arr1 = array(array('elephant'),array('module'),array('branch'),array('religion'),array('charge'));
+//$Arr2 = array(array('religion'),array('religion'),array('module'),array('state'));
+
+$Arr1 = array(1=>array('elephant'),
+			2=>array('module'),
+			4=>array('branch'),
+			5=>array('religion'),
+			7=>array('charge'),
+);
+$Arr2 = array(1=>array('religion'),
+			2=>array('module'),
+			4=>array('module'),
+			5=>array('religion'),
+			7=>array('state'),
+);
+
+ 
+
+$resArr = array_intersect_assoc($Arr1,$Arr2);
+
+//echo "<pre>";
+ print_r($Arr1);
+ echo '<hr/>';
+print_r($Arr2);
+ echo '<hr/>';
+ print_r($resArr);
+ echo "</pre>";
+//exit;
+foreach($resArr as $k1 => $arr){
+	foreach($Arr2 as $k2 => $ar1){
+		//echo "<pre>";print_r($ar1);echo "</pre>";
+		if($ar1[0] == $arr[0]){
+			$result[$k1][] = $k2;
+			$result_val[$k1][] = $ar1[0];
+		}/*else{
+			if(!array_key_exists($k1,$result))
+				$result[$k1] = array();
+		}*/
+	}
+}
+echo "<pre>";
+print_r($result);
+print_r($result_val);
+echo "</pre>";
+exit;
+?>

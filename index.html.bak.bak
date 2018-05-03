@@ -1,0 +1,15 @@
+
+<button onclick="common('add')">fdsfdf</button>
+<button onclick="common('del')">dsfd</button>
+
+<script>
+function common(cm){
+if(cm=='add')
+{
+alert(cm);
+}
+if(cm=='del'){
+alert(cm);
+}
+}
+</script>
